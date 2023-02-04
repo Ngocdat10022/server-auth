@@ -14,5 +14,5 @@ app.use(cors());
 app.get("/api/campaigns", verifyToken, (req, res) => {
   res.json(database.campaigns);
 });
-
-app.listen(4001, () => console.log("Server started on port 4001"));
+const PORT = process.env.port || 4001;
+app.listen(PORT, () => console.log("Server started on port 4001"));
